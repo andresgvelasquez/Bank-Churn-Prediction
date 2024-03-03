@@ -60,6 +60,8 @@ Evaluates the discrimination ability of a classification model by measuring the 
 
 All models show improvement after adjusting for class weight and balancing for F1 and ROC-AUC metrics. The model with the best F1 score was selected, which corresponds to the random forest with weight adjustment, balancing, and threshold adjustment.
 
+Métrics for train.
+
 |  Model             | Weight Adjustment | Balancing   | Threshold | F1       | ROC-AUC  |
 |--------------------|-------------------|-------------|-----------|----------|----------|
 | Logistic Regression| No                | No          | 0.50      | 0.3201   | 0.7945   |
@@ -67,6 +69,11 @@ All models show improvement after adjusting for class weight and balancing for F
 |  Decision Tree     | No                | No          | 0.50      | 0.5557   | 0.7945   |
 |  Decision Tree     | balanced          | upsampled   | 0.50      | 0.9298   | 0.9242   |
 |  Random Forest     | No                | No          | 0.50      | 0.5794   | 0.8504   |
-|  Random Forest     | balanced          | upsampled   | 0.44      | 0.9600   | 0.9969   |
+|  **Random Forest** | **balanced**      | **upsampled**   | **0.44**      | **0.9600**   | **0.9969**   |
+
+The F1 score for the best model (Random Forest, balanced, upsampled) on the test set was 0.6066. That exceeds the proposed metric.
 
 ## Conclusion
+- The threshold allows for improving predictions based on a metric.
+- The difference between unbalanced and balanced models is considerably high. For the unbalanced training set, the F1 score was 0.57, while for the balanced test set, it was 0.96.
+- The proposed F1 metric for the test set of 0.58 was exceeded. The result was `F1 = 0.6066`.
