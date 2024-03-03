@@ -1,42 +1,48 @@
-# Beta Bank ¿Un cliente dejará el banco pronto?
+# Beta Bank: Will a Customer Leave the Bank Soon?
 
-## Como contactarme
+## Contact
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andres946/)
 [![Correo Electrónico](https://img.shields.io/badge/Correo%20Electrónico-andresgvelasquez8@gmail.com-red?style=for-the-badge&logo=mail.ru)](mailto:andresgvelasquez8@gmail.com)  
 
-## Descripción del proyecto
-Los clientes de Beta Bank se están yendo, cada mes, poco a poco. Los banqueros descubrieron que es más barato salvar a los clientes existentes que atraer nuevos.
-Necesitamos predecir si un cliente dejará el banco pronto. Tú tienes los datos sobre el comportamiento pasado de los clientes y la terminación de contratos con el banco.
-Crea un modelo con el máximo valor F1 posible. Para aprobar la revisión, necesitas un valor F1 de al menos 0.59. Verifica F1 para el conjunto de prueba. 
-Además, debes medir la métrica AUC-ROC y compararla con el valor F1.
+## Description of the project:
+Beta Bank customers are gradually leaving, month by month. Bankers have discovered that it is cheaper to retain existing customers than to attract new ones.
+We need to predict if a customer will leave the bank soon. You have data on customers' past behavior and termination of contracts with the bank.
+Create a model with the maximum possible F1 score. To pass the review, you need an F1 score of at least 0.59. Verify F1 for the test set.
+Additionally, you must measure the AUC-ROC metric and compare it with the F1 score.
 
-## Diccionario de datos
+## Data Description
 
-Ubicación: `../datasets/Churn.csv`  
-  
-1. Características:
-    - RowNumber: índice de cadena de datos
-    - CustomerId: identificador de cliente único
-    - Surname: apellido
-    - CreditScore: valor de crédito
-    - Geography: país de residencia
-    - Gender: sexo
-    - Age: edad
-    - Tenure: período durante el cual ha madurado el depósito a plazo fijo de un cliente (años)
-    - Balance: saldo de la cuenta
-    - NumOfProducts: número de productos bancarios utilizados por el cliente
-    - HasCrCard: el cliente tiene una tarjeta de crédito (1 - sí; 0 - no)
-    - IsActiveMember: actividad del cliente (1 - sí; 0 - no)
-    - EstimatedSalary: salario estimado
-2. Objetivo
-    - Exited: El cliente se ha ido (1 - sí; 0 - no)
+**Location:** `../datasets/Churn.csv`
 
-## Instalación de dependencias
+**Features:**
+- `RowNumber`: index of the data row
+- `CustomerId`: unique customer identifier
+- `Surname`: last name
+- `CreditScore`: credit score
+- `Geography`: country of residence
+- `Gender`: gender
+- `Age`: age
+- `Tenure`: period for which the customer has held a fixed-term deposit (years)
+- `Balance`: account balance
+- `NumOfProducts`: number of bank products used by the customer
+- `HasCrCard`: whether the customer has a credit card (1 - yes; 0 - no)
+- `IsActiveMember`: customer activity (1 - yes; 0 - no)
+- `EstimatedSalary`: estimated salary
 
-Para instalar las dependencias necesarias para este proyecto, puedes ejecutar el siguiente comando:
+**Target:**
+- `Exited`: Whether the customer has left (1 - yes; 0 - no)
+
+## Virtual Environment Setup
+
+To run this project, it is recommended to create a Python virtual environment. You can do this by executing the following commands in your terminal:
 
 ```bash
-pip install -r requirements.txt
+python -m venv venv
+source venv/bin/activate  # For Linux/Mac
+# or
+.\venv\Scripts\activate   # For Windows
 ```
-**Nota** Esta versión de Boruta puede arrojar un error al utilizar np.float, np.int y np.bool. Basta con reemplazarlos por
-float, int, bool respectivamente en el archivo donde este el error. 
+
+Then, you need to install the dependencies:
+
+```bash
