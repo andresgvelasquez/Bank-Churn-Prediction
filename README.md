@@ -46,3 +46,6 @@ source venv/bin/activate  # For Linux/Mac
 Then, you need to install the dependencies:
 
 ```bash
+pip install -r requirements.txt
+```
+Once you have set up the virtual environment and installed the dependencies, you can run the project.
