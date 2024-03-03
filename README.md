@@ -49,3 +49,24 @@ Then, you need to install the dependencies:
 pip install -r requirements.txt
 ```
 Once you have set up the virtual environment and installed the dependencies, you can run the project.
+
+## Metrics
+
+**F1 Score**:
+A metric combining precision and recall, useful for evaluating binary classification models.
+
+**ROC-AUC**:
+Evaluates the discrimination ability of a classification model by measuring the area under the ROC curve.
+
+All models show improvement after adjusting for class weight and balancing for F1 and ROC-AUC metrics. The model with the best F1 score was selected, which corresponds to the random forest with weight adjustment, balancing, and threshold adjustment.
+
+|  Model             | Weight Adjustment | Balancing   | Threshold | F1       | ROC-AUC  |
+|--------------------|-------------------|-------------|-----------|----------|----------|
+| Logistic Regression| No                | No          | 0.50      | 0.3201   | 0.7945   |
+| Logistic Regression| balanced          | upsampled   | 0.50      | 0.9298   | 0.9241   |
+|  Decision Tree     | No                | No          | 0.50      | 0.5557   | 0.7945   |
+|  Decision Tree     | balanced          | upsampled   | 0.50      | 0.9298   | 0.9242   |
+|  Random Forest     | No                | No          | 0.50      | 0.5794   | 0.8504   |
+|  Random Forest     | balanced          | upsampled   | 0.44      | 0.9600   | 0.9969   |
+
+## Conclusion
